@@ -1,0 +1,42 @@
+﻿@model AddNumber.Models.AddModel
+@{
+    ViewBag.Title = "Add";
+}
+
+@using (Html.BeginForm("Add", "Home", FormMethod.Post, new { }))
+{
+  
+    <div class="row" style="margin-top:20px">
+        <div class="col-md-12 form-group">
+            <div class="col-md-4">
+                Enter the first number
+            </div>
+            <div class="col-md-4">
+                @Html.TextBoxFor(x => x.FirstNumber, new { @class = "form-control", @placeholder = "First Number" })
+            </div>
+        </div>
+        <div class="col-md-12 form-group">
+            <div class="col-md-4">
+                Enter the second number
+            </div>
+            <div class="col-md-4">
+                @Html.TextBoxFor(x => x.SecondNumber, new { @class = "form-control", @placeholder = "Second Number" })
+            </div>
+        </div>
+        <div class="col-md-12 col-md-offset-4 form-group">
+            <button type="submit">Add</button>
+        </div>
+        <div class="col-md-12 form-group">
+            <div class="col-md-4">
+                Result
+            </div>
+            <div class="col-md-4">
+                <b>  @Model.Sum</b> 
+            </div>
+        </div>
+
+
+    </div>
+
+}
+
